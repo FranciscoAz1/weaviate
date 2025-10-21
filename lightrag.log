@@ -1,0 +1,356 @@
+2025-03-25 16:52:50,652 - lightrag - INFO - Created new empty graph
+2025-03-25 16:52:52,038 - uvicorn.error - INFO - Started server process [28936]
+2025-03-25 16:52:52,038 - uvicorn.error - INFO - Waiting for application startup.
+2025-03-25 16:52:52,038 - lightrag - INFO - Process 28936 KV load full_docs with 0 records
+2025-03-25 16:52:52,040 - lightrag - INFO - Process 28936 KV load text_chunks with 0 records
+2025-03-25 16:52:52,040 - lightrag - INFO - Process 28936 KV load llm_response_cache with 0 records
+2025-03-25 16:52:52,040 - lightrag - INFO - Process 28936 doc status load doc_status with 0 records
+2025-03-25 16:52:52,041 - uvicorn.error - INFO - Application startup complete.
+2025-03-25 16:52:52,041 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-03-25 16:53:56,083 - uvicorn.access - INFO - 127.0.0.1:55841 - "GET /webui HTTP/1.1" 307
+2025-03-25 16:53:56,171 - uvicorn.access - INFO - 127.0.0.1:55841 - "GET /webui/assets/index-CSrxfS-k.js HTTP/1.1" 200
+2025-03-25 16:53:56,179 - uvicorn.access - INFO - 127.0.0.1:55842 - "GET /webui/assets/index-mPRIIErN.css HTTP/1.1" 200
+2025-03-25 16:53:56,763 - uvicorn.access - INFO - 127.0.0.1:55841 - "GET /auth-status HTTP/1.1" 200
+2025-03-25 16:53:57,965 - uvicorn.access - INFO - 127.0.0.1:55841 - "GET /docs HTTP/1.1" 200
+2025-03-25 16:53:57,978 - lightrag - INFO - Process 28936 reloading graph chunk_entity_relation due to update by another process
+2025-03-25 16:53:57,978 - uvicorn.access - INFO - 127.0.0.1:55842 - "GET /graph/label/list HTTP/1.1" 200
+2025-03-25 16:53:57,979 - lightrag - INFO - Subgraph query successful | Node count: 0 | Edge count: 0
+2025-03-25 16:53:57,979 - uvicorn.access - INFO - 127.0.0.1:55844 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 16:53:58,444 - uvicorn.access - INFO - 127.0.0.1:55844 - "GET /openapi.json HTTP/1.1" 200
+2025-03-25 16:53:58,625 - uvicorn.access - INFO - 127.0.0.1:55844 - "GET /webui/logo.png HTTP/1.1" 200
+2025-03-25 16:54:11,937 - uvicorn.access - INFO - 127.0.0.1:55874 - "POST /documents/upload HTTP/1.1" 200
+2025-03-25 16:54:12,699 - lightrag - INFO - Inserting 1 records to doc_status
+2025-03-25 16:54:12,700 - lightrag - INFO - Process 28936 doc status writting 1 records to doc_status
+2025-03-25 16:54:12,702 - lightrag - INFO - Stored 1 new unique documents
+2025-03-25 16:54:12,702 - lightrag - INFO - Successfully fetched and enqueued file: PIC_até agora.pdf
+2025-03-25 16:54:12,703 - lightrag - INFO - Processing 1 document(s) in 1 batches
+2025-03-25 16:54:12,703 - lightrag - INFO - Start processing batch 1 of 1.
+2025-03-25 16:54:17,932 - lightrag - INFO - Inserting 1 records to doc_status
+2025-03-25 16:54:17,932 - lightrag - INFO - Process 28936 doc status writting 1 records to doc_status
+2025-03-25 16:54:17,935 - lightrag - INFO - Inserting 11 to chunks
+2025-03-25 16:54:17,935 - lightrag - INFO - Inserting 1 records to full_docs
+2025-03-25 16:54:17,935 - lightrag - INFO - Inserting 11 records to text_chunks
+2025-03-25 16:54:46,175 - lightrag - INFO - Process 28936 reloading chunks due to update by another process
+2025-03-25 16:54:46,180 - uvicorn.access - INFO - 127.0.0.1:55897 - "POST /documents/scan HTTP/1.1" 200
+2025-03-25 16:54:46,198 - lightrag - INFO - Found 1 new files to index.
+2025-03-25 16:54:46,199 - uvicorn.access - INFO - 127.0.0.1:55908 - "POST /documents/scan HTTP/1.1" 200
+2025-03-25 16:54:46,213 - lightrag - INFO - Found 1 new files to index.
+2025-03-25 16:54:46,634 - lightrag - INFO - No new unique documents were found.
+2025-03-25 16:54:46,635 - lightrag - INFO - Successfully fetched and enqueued file: PIC_até agora.pdf
+2025-03-25 16:54:46,635 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-03-25 16:54:47,019 - lightrag - INFO - No new unique documents were found.
+2025-03-25 16:54:47,019 - lightrag - INFO - Successfully fetched and enqueued file: PIC_até agora.pdf
+2025-03-25 16:54:47,020 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-03-25 16:55:40,325 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:55:47,041 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:55:51,920 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:55:53,776 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:55:58,320 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:56:01,564 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:56:04,340 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:56:08,008 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:56:09,621 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:56:09,621 - lightrag - INFO - Process 28936 buidling query context...
+2025-03-25 16:56:09,622 - lightrag - INFO - Query edges: Workplan, Project management, top_k: 10, cosine: 0.2
+2025-03-25 16:56:11,776 - lightrag - INFO - Process 28936 reloading relationships due to update by another process
+2025-03-25 16:56:11,778 - lightrag - INFO - Process 28936 KV writting 9 records to llm_response_cache
+2025-03-25 16:56:11,796 - uvicorn.access - INFO - 127.0.0.1:56010 - "POST /query/stream HTTP/1.1" 200
+2025-03-25 16:56:28,783 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:56:28,783 - lightrag - INFO -   Chunk 1/11: extracted 10 entities and 0 relationships (deduplicated)
+2025-03-25 16:56:31,499 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:56:48,154 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:56:48,154 - lightrag - INFO -   Chunk 2/11: extracted 9 entities and 8 relationships (deduplicated)
+2025-03-25 16:56:56,194 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:57:13,561 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:57:13,562 - lightrag - INFO -   Chunk 3/11: extracted 17 entities and 0 relationships (deduplicated)
+2025-03-25 16:57:13,798 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:57:27,872 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:57:27,873 - lightrag - INFO -   Chunk 4/11: extracted 0 entities and 0 relationships (deduplicated)
+2025-03-25 16:57:32,910 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:57:32,911 - lightrag - INFO -   Chunk 5/11: extracted 17 entities and 0 relationships (deduplicated)
+2025-03-25 16:57:50,797 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:57:50,798 - lightrag - INFO -   Chunk 6/11: extracted 15 entities and 0 relationships (deduplicated)
+2025-03-25 16:58:10,104 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:58:10,104 - lightrag - INFO -   Chunk 7/11: extracted 0 entities and 0 relationships (deduplicated)
+2025-03-25 16:58:19,885 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:58:19,886 - lightrag - INFO -   Chunk 8/11: extracted 23 entities and 0 relationships (deduplicated)
+2025-03-25 16:58:21,952 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:58:21,953 - lightrag - INFO - Process 28936 buidling query context...
+2025-03-25 16:58:21,954 - lightrag - INFO - Query edges: Workplan, Introduction to LLMs, top_k: 10, cosine: 0.2
+2025-03-25 16:58:24,095 - lightrag - INFO - Process 28936 KV writting 21 records to llm_response_cache
+2025-03-25 16:58:24,102 - uvicorn.access - INFO - 127.0.0.1:56374 - "POST /query/stream HTTP/1.1" 200
+2025-03-25 16:58:27,041 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:58:27,041 - lightrag - INFO -   Chunk 9/11: extracted 0 entities and 0 relationships (deduplicated)
+2025-03-25 16:58:43,986 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:58:43,987 - lightrag - INFO -   Chunk 10/11: extracted 0 entities and 0 relationships (deduplicated)
+2025-03-25 16:58:52,623 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 16:58:52,624 - lightrag - INFO -   Chunk 11/11: extracted 19 entities and 13 relationships (deduplicated)
+2025-03-25 16:58:52,636 - lightrag - INFO - Extracted 75 entities and 15 relationships (deduplicated)
+2025-03-25 16:58:52,637 - lightrag - INFO - Inserting 75 to entities
+2025-03-25 16:59:00,104 - lightrag - INFO - Process 28936 reloading entities due to update by another process
+2025-03-25 16:59:00,107 - lightrag - INFO - Inserting 15 to relationships
+2025-03-25 16:59:02,408 - lightrag - INFO - Inserting 1 records to doc_status
+2025-03-25 16:59:02,408 - lightrag - INFO - Process 28936 doc status writting 1 records to doc_status
+2025-03-25 16:59:02,412 - lightrag - INFO - Process 28936 KV writting 1 records to full_docs
+2025-03-25 16:59:02,423 - lightrag - INFO - Process 28936 KV writting 11 records to text_chunks
+2025-03-25 16:59:02,426 - lightrag - INFO - Process 28936 KV writting 24 records to llm_response_cache
+2025-03-25 16:59:02,445 - lightrag - INFO - Writing graph with 75 nodes, 15 edges
+2025-03-25 16:59:02,460 - lightrag - INFO - In memory DB persist to disk
+2025-03-25 16:59:02,460 - lightrag - INFO - Completed batch 1 of 1.
+2025-03-25 16:59:02,461 - lightrag - INFO - Processing additional documents due to pending request
+2025-03-25 16:59:02,461 - lightrag - INFO - All documents have been processed or are duplicates
+2025-03-25 16:59:02,463 - lightrag - INFO - Document processing pipeline completed
+2025-03-25 17:00:58,687 - uvicorn.access - INFO - 127.0.0.1:56592 - "GET /api/version HTTP/1.1" 200
+2025-03-25 17:01:27,897 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:01:27,900 - uvicorn.access - INFO - 127.0.0.1:56593 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:01:28,414 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:01:28,415 - lightrag - INFO - Process 28936 buidling query context...
+2025-03-25 17:01:28,415 - lightrag - INFO - Query edges: LLMs, Workplan, Introduction, top_k: 10, cosine: 0.2
+2025-03-25 17:01:30,515 - lightrag - INFO - Global query uses 14 entites, 10 relations, 2 chunks
+2025-03-25 17:01:30,534 - lightrag - INFO - Process 28936 KV writting 25 records to llm_response_cache
+2025-03-25 17:01:30,542 - uvicorn.access - INFO - 127.0.0.1:56592 - "POST /query/stream HTTP/1.1" 200
+2025-03-25 17:01:55,414 - uvicorn.access - INFO - 127.0.0.1:56684 - "POST /documents/scan HTTP/1.1" 200
+2025-03-25 17:01:55,426 - lightrag - INFO - Found 1 new files to index.
+2025-03-25 17:01:55,852 - lightrag - INFO - No new unique documents were found.
+2025-03-25 17:01:55,853 - lightrag - INFO - Successfully fetched and enqueued file: PIC_até agora.pdf
+2025-03-25 17:01:55,853 - lightrag - INFO - No documents to process
+2025-03-25 17:02:01,079 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:02:01,082 - uvicorn.access - INFO - 127.0.0.1:56684 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:03:47,296 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:03:47,299 - uvicorn.access - INFO - 127.0.0.1:56725 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:04:17,546 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:04:17,548 - uvicorn.access - INFO - 127.0.0.1:56814 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:04:18,229 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:04:18,230 - uvicorn.access - INFO - 127.0.0.1:56815 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:04:18,409 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:04:18,412 - uvicorn.access - INFO - 127.0.0.1:56815 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:04:18,595 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:04:18,743 - uvicorn.access - INFO - 127.0.0.1:56815 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:04:19,467 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:04:19,468 - uvicorn.access - INFO - 127.0.0.1:56815 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:04:20,906 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:04:20,907 - uvicorn.access - INFO - 127.0.0.1:56815 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:04:21,170 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:04:21,172 - uvicorn.access - INFO - 127.0.0.1:56815 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:04:21,361 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:04:21,364 - uvicorn.access - INFO - 127.0.0.1:56815 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:04:21,540 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:04:21,542 - uvicorn.access - INFO - 127.0.0.1:56815 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:04:21,707 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:04:21,709 - uvicorn.access - INFO - 127.0.0.1:56815 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:06:26,660 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:06:26,663 - uvicorn.access - INFO - 127.0.0.1:57060 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:39,368 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:39,369 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:46,265 - uvicorn.access - INFO - 127.0.0.1:57149 - "POST /documents/scan HTTP/1.1" 200
+2025-03-25 17:07:46,269 - lightrag - INFO - Found 1 new files to index.
+2025-03-25 17:07:46,458 - lightrag - INFO - No new unique documents were found.
+2025-03-25 17:07:46,459 - lightrag - INFO - Successfully fetched and enqueued file: PIC_até agora.pdf
+2025-03-25 17:07:46,459 - lightrag - INFO - No documents to process
+2025-03-25 17:07:48,773 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:48,774 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:49,389 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:49,390 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:49,579 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:49,582 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:49,780 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:49,782 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:50,264 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:50,265 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:50,700 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:50,703 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:50,894 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:50,897 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:51,111 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:51,114 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:51,941 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:51,943 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:52,752 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:52,754 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:07:53,280 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:07:53,282 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:08:07,265 - uvicorn.access - INFO - 127.0.0.1:57149 - "DELETE /documents HTTP/1.1" 200
+2025-03-25 17:08:13,704 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:08:13,705 - uvicorn.access - INFO - 127.0.0.1:57196 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:08:13,950 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:08:13,951 - uvicorn.access - INFO - 127.0.0.1:57196 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:08:21,957 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:08:21,959 - uvicorn.access - INFO - 127.0.0.1:57196 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:08:22,136 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:08:22,138 - uvicorn.access - INFO - 127.0.0.1:57196 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:08:22,312 - lightrag - INFO - Subgraph query successful | Node count: 75 | Edge count: 15
+2025-03-25 17:08:22,314 - uvicorn.access - INFO - 127.0.0.1:57196 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:08:29,463 - uvicorn.error - INFO - Shutting down
+2025-03-25 17:08:29,571 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-03-25 17:08:29,571 - uvicorn.error - INFO - Application shutdown complete.
+2025-03-25 17:08:29,571 - uvicorn.error - INFO - Finished server process [28936]
+2025-03-25 17:09:02,037 - lightrag - INFO - Created new empty graph
+2025-03-25 17:09:02,077 - uvicorn.error - INFO - Started server process [29756]
+2025-03-25 17:09:02,078 - uvicorn.error - INFO - Waiting for application startup.
+2025-03-25 17:09:02,078 - lightrag - INFO - Process 29756 KV load full_docs with 0 records
+2025-03-25 17:09:02,078 - lightrag - INFO - Process 29756 KV load text_chunks with 0 records
+2025-03-25 17:09:02,080 - lightrag - INFO - Process 29756 KV load llm_response_cache with 0 records
+2025-03-25 17:09:02,080 - lightrag - INFO - Process 29756 doc status load doc_status with 0 records
+2025-03-25 17:09:02,080 - uvicorn.error - INFO - Application startup complete.
+2025-03-25 17:09:02,080 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-03-25 17:09:57,993 - uvicorn.access - INFO - 127.0.0.1:57333 - "GET /docs HTTP/1.1" 200
+2025-03-25 17:09:58,449 - uvicorn.access - INFO - 127.0.0.1:57333 - "GET /openapi.json HTTP/1.1" 200
+2025-03-25 17:10:23,256 - uvicorn.access - INFO - 127.0.0.1:57334 - "GET /webui HTTP/1.1" 307
+2025-03-25 17:10:23,426 - uvicorn.access - INFO - 127.0.0.1:57334 - "GET /webui/assets/index-CSrxfS-k.js HTTP/1.1" 304
+2025-03-25 17:10:23,428 - uvicorn.access - INFO - 127.0.0.1:57335 - "GET /webui/assets/index-mPRIIErN.css HTTP/1.1" 304
+2025-03-25 17:10:25,070 - uvicorn.access - INFO - 127.0.0.1:57335 - "GET /docs HTTP/1.1" 200
+2025-03-25 17:10:25,083 - lightrag - INFO - Process 29756 reloading graph chunk_entity_relation due to update by another process
+2025-03-25 17:10:25,084 - uvicorn.access - INFO - 127.0.0.1:57335 - "GET /graph/label/list HTTP/1.1" 200
+2025-03-25 17:10:25,084 - lightrag - INFO - Subgraph query successful | Node count: 0 | Edge count: 0
+2025-03-25 17:10:25,085 - uvicorn.access - INFO - 127.0.0.1:57334 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:10:25,252 - uvicorn.access - INFO - 127.0.0.1:57334 - "GET /openapi.json HTTP/1.1" 200
+2025-03-25 17:10:27,779 - lightrag - INFO - Subgraph query successful | Node count: 0 | Edge count: 0
+2025-03-25 17:10:27,779 - uvicorn.access - INFO - 127.0.0.1:57334 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:10:30,070 - uvicorn.access - INFO - 127.0.0.1:57334 - "POST /documents/scan HTTP/1.1" 200
+2025-03-25 17:10:30,085 - lightrag - INFO - Found 1 new files to index.
+2025-03-25 17:10:30,538 - lightrag - INFO - Inserting 1 records to doc_status
+2025-03-25 17:10:30,539 - lightrag - INFO - Process 29756 doc status writting 1 records to doc_status
+2025-03-25 17:10:30,549 - lightrag - INFO - Stored 1 new unique documents
+2025-03-25 17:10:30,550 - lightrag - INFO - Successfully fetched and enqueued file: PIC_até agora.pdf
+2025-03-25 17:10:30,551 - lightrag - INFO - Processing 1 document(s) in 1 batches
+2025-03-25 17:10:30,551 - lightrag - INFO - Start processing batch 1 of 1.
+2025-03-25 17:10:30,920 - lightrag - INFO - Inserting 1 records to doc_status
+2025-03-25 17:10:30,920 - lightrag - INFO - Process 29756 doc status writting 1 records to doc_status
+2025-03-25 17:10:30,922 - lightrag - INFO - Inserting 11 to chunks
+2025-03-25 17:10:30,923 - lightrag - INFO - Inserting 1 records to full_docs
+2025-03-25 17:10:30,923 - lightrag - INFO - Inserting 11 records to text_chunks
+2025-03-25 17:10:34,049 - lightrag - INFO - Process 29756 reloading chunks due to update by another process
+2025-03-25 17:10:46,475 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:10:46,599 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:10:48,810 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:10:54,368 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:10:59,833 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:11:03,397 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:11:10,052 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:11:33,565 - uvicorn.access - INFO - 127.0.0.1:57456 - "GET /docs HTTP/1.1" 200
+2025-03-25 17:11:33,578 - uvicorn.access - INFO - 127.0.0.1:57564 - "GET /graph/label/list HTTP/1.1" 200
+2025-03-25 17:11:33,579 - lightrag - INFO - Subgraph query successful | Node count: 0 | Edge count: 0
+2025-03-25 17:11:33,579 - uvicorn.access - INFO - 127.0.0.1:57456 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:11:33,768 - uvicorn.access - INFO - 127.0.0.1:57456 - "GET /openapi.json HTTP/1.1" 200
+2025-03-25 17:11:34,042 - uvicorn.access - INFO - 127.0.0.1:57456 - "GET /webui/logo.png HTTP/1.1" 304
+2025-03-25 17:11:39,411 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:11:41,784 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:11:50,909 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:12:04,025 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:12:04,026 - lightrag - INFO -   Chunk 1/11: extracted 12 entities and 0 relationships (deduplicated)
+2025-03-25 17:12:09,467 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:12:09,468 - lightrag - INFO -   Chunk 2/11: extracted 6 entities and 4 relationships (deduplicated)
+2025-03-25 17:12:15,205 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:12:15,206 - lightrag - INFO -   Chunk 3/11: extracted 14 entities and 0 relationships (deduplicated)
+2025-03-25 17:12:32,735 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:12:32,736 - lightrag - INFO -   Chunk 4/11: extracted 10 entities and 6 relationships (deduplicated)
+2025-03-25 17:12:40,789 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:12:40,790 - lightrag - INFO -   Chunk 5/11: extracted 10 entities and 5 relationships (deduplicated)
+2025-03-25 17:12:50,348 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:12:50,349 - lightrag - INFO -   Chunk 6/11: extracted 11 entities and 0 relationships (deduplicated)
+2025-03-25 17:13:17,513 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:13:17,514 - lightrag - INFO -   Chunk 7/11: extracted 0 entities and 0 relationships (deduplicated)
+2025-03-25 17:13:23,922 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:13:23,923 - lightrag - INFO -   Chunk 8/11: extracted 32 entities and 15 relationships (deduplicated)
+2025-03-25 17:14:02,118 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:14:02,119 - lightrag - INFO -   Chunk 9/11: extracted 0 entities and 0 relationships (deduplicated)
+2025-03-25 17:14:14,835 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 17:14:14,836 - lightrag - INFO -   Chunk 10/11: extracted 45 entities and 35 relationships (deduplicated)
+2025-03-25 17:33:01,980 - lightrag - INFO - Subgraph query successful | Node count: 0 | Edge count: 0
+2025-03-25 17:33:01,981 - uvicorn.access - INFO - 127.0.0.1:59141 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:33:22,668 - lightrag - INFO - Subgraph query successful | Node count: 0 | Edge count: 0
+2025-03-25 17:33:22,668 - uvicorn.access - INFO - 127.0.0.1:59176 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:33:26,107 - lightrag - INFO - Subgraph query successful | Node count: 0 | Edge count: 0
+2025-03-25 17:33:26,107 - uvicorn.access - INFO - 127.0.0.1:59176 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:39:07,315 - uvicorn.access - INFO - 127.0.0.1:59696 - "GET /docs HTTP/1.1" 200
+2025-03-25 17:39:07,575 - uvicorn.access - INFO - 127.0.0.1:59696 - "GET /openapi.json HTTP/1.1" 200
+2025-03-25 17:39:54,001 - uvicorn.access - INFO - 127.0.0.1:59781 - "GET /docs HTTP/1.1" 200
+2025-03-25 17:39:54,269 - uvicorn.access - INFO - 127.0.0.1:59781 - "GET /openapi.json HTTP/1.1" 200
+2025-03-25 17:40:17,915 - uvicorn.access - INFO - 127.0.0.1:59838 - "GET /redoc HTTP/1.1" 200
+2025-03-25 17:40:18,445 - uvicorn.access - INFO - 127.0.0.1:59838 - "GET /openapi.json HTTP/1.1" 200
+2025-03-25 17:44:04,400 - lightrag - INFO - Subgraph query successful | Node count: 0 | Edge count: 0
+2025-03-25 17:44:04,401 - uvicorn.access - INFO - 127.0.0.1:60919 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 17:44:05,690 - lightrag - INFO - Subgraph query successful | Node count: 0 | Edge count: 0
+2025-03-25 17:44:05,690 - uvicorn.access - INFO - 127.0.0.1:60919 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 18:50:08,422 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 18:50:10,674 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 18:50:10,675 - lightrag - INFO - Process 29756 buidling query context...
+2025-03-25 18:50:10,675 - lightrag - INFO - Query edges: Weaviate, Database, Cloud-based, top_k: 10, cosine: 0.2
+2025-03-25 18:50:12,746 - lightrag - INFO - Process 29756 reloading relationships due to update by another process
+2025-03-25 18:50:12,748 - lightrag - INFO - Process 29756 KV writting 22 records to llm_response_cache
+2025-03-25 18:50:12,757 - uvicorn.access - INFO - 127.0.0.1:60920 - "POST /query/stream HTTP/1.1" 200
+2025-03-25 18:50:12,759 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 18:50:12,759 - lightrag - INFO -   Chunk 11/11: extracted 22 entities and 13 relationships (deduplicated)
+2025-03-25 18:50:12,775 - lightrag - INFO - Extracted 106 entities and 48 relationships (deduplicated)
+2025-03-25 18:50:12,776 - lightrag - INFO - Inserting 106 to entities
+2025-03-25 18:50:22,683 - lightrag - INFO - Process 29756 reloading entities due to update by another process
+2025-03-25 18:50:22,688 - lightrag - INFO - Inserting 48 to relationships
+2025-03-25 18:50:27,553 - lightrag - INFO - Inserting 1 records to doc_status
+2025-03-25 18:50:27,553 - lightrag - INFO - Process 29756 doc status writting 1 records to doc_status
+2025-03-25 18:50:27,555 - lightrag - INFO - Process 29756 KV writting 1 records to full_docs
+2025-03-25 18:50:27,558 - lightrag - INFO - Process 29756 KV writting 11 records to text_chunks
+2025-03-25 18:50:27,560 - lightrag - INFO - Process 29756 KV writting 23 records to llm_response_cache
+2025-03-25 18:50:27,591 - lightrag - INFO - Writing graph with 107 nodes, 48 edges
+2025-03-25 18:50:27,610 - lightrag - INFO - In memory DB persist to disk
+2025-03-25 18:50:27,610 - lightrag - INFO - Completed batch 1 of 1.
+2025-03-25 18:50:27,611 - lightrag - INFO - Document processing pipeline completed
+2025-03-25 19:13:27,588 - lightrag - INFO - Process 29756 buidling query context...
+2025-03-25 19:13:27,588 - lightrag - INFO - Query edges: Weaviate, Database, Cloud-based, top_k: 10, cosine: 0.2
+2025-03-25 19:13:29,668 - lightrag - INFO - Global query uses 16 entites, 10 relations, 3 chunks
+2025-03-25 19:13:29,689 - uvicorn.access - INFO - 127.0.0.1:65397 - "POST /query/stream HTTP/1.1" 200
+2025-03-25 19:14:27,449 - uvicorn.access - INFO - 127.0.0.1:49197 - "GET /docs HTTP/1.1" 200
+2025-03-25 19:14:48,613 - lightrag - INFO - Subgraph query successful | Node count: 107 | Edge count: 48
+2025-03-25 19:14:48,618 - uvicorn.access - INFO - 127.0.0.1:49198 - "GET /graphs?label=*&max_depth=3&min_degree=0 HTTP/1.1" 200
+2025-03-25 20:47:11,661 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 20:47:11,662 - lightrag - INFO - Process 29756 buidling query context...
+2025-03-25 20:47:11,662 - lightrag - INFO - Query edges: Thesis, Francisco Azeredo, top_k: 10, cosine: 0.2
+2025-03-25 20:47:13,764 - lightrag - INFO - Global query uses 15 entites, 10 relations, 1 chunks
+2025-03-25 20:47:13,782 - lightrag - INFO - Process 29756 KV writting 24 records to llm_response_cache
+2025-03-25 20:47:13,796 - uvicorn.access - INFO - 127.0.0.1:54175 - "POST /query/stream HTTP/1.1" 200
+2025-03-25 20:48:06,930 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 20:48:06,930 - lightrag - INFO - Process 29756 buidling query context...
+2025-03-25 20:48:06,930 - lightrag - INFO - Query edges: Weaviate, Vector database, Machine learning models, Data storage, Recommendation systems, top_k: 10, cosine: 0.2
+2025-03-25 20:48:09,002 - lightrag - INFO - Global query uses 17 entites, 10 relations, 3 chunks
+2025-03-25 20:48:09,026 - lightrag - INFO - Process 29756 KV writting 25 records to llm_response_cache
+2025-03-25 20:48:09,038 - uvicorn.access - INFO - 127.0.0.1:54248 - "POST /query/stream HTTP/1.1" 200
+2025-03-25 20:49:09,425 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 20:49:09,425 - lightrag - INFO - Process 29756 buidling query context...
+2025-03-25 20:49:09,426 - lightrag - INFO - Query nodes: Academic research, Research paper, top_k: 10, cosine: 0.2
+2025-03-25 20:49:11,500 - lightrag - INFO - Query edges: Francisco Carlos Qiu Mexia de Azeredo, Thesis, top_k: 10, cosine: 0.2
+2025-03-25 20:49:13,576 - lightrag - INFO - Global query uses 15 entites, 10 relations, 1 chunks
+2025-03-25 20:49:13,577 - lightrag - INFO - Local query uses 10 entites, 0 relations, 3 chunks
+2025-03-25 20:49:13,601 - lightrag - INFO - Process 29756 KV writting 26 records to llm_response_cache
+2025-03-25 20:49:13,614 - uvicorn.access - INFO - 127.0.0.1:54306 - "POST /query/stream HTTP/1.1" 200
+2025-03-25 20:50:09,393 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 20:50:09,393 - lightrag - INFO - Process 29756 buidling query context...
+2025-03-25 20:50:09,393 - lightrag - INFO - Query nodes: Tesseract, top_k: 10, cosine: 0.2
+2025-03-25 20:50:11,463 - lightrag - INFO - Query edges: Thesis, Francisco Carlos Qiu Mexia de Azeredo, top_k: 10, cosine: 0.2
+2025-03-25 20:50:13,535 - lightrag - INFO - Global query uses 15 entites, 10 relations, 1 chunks
+2025-03-25 20:50:13,541 - lightrag - INFO - Local query uses 10 entites, 6 relations, 3 chunks
+2025-03-25 20:50:13,565 - lightrag - INFO - Process 29756 KV writting 27 records to llm_response_cache
+2025-03-25 20:50:13,577 - uvicorn.access - INFO - 127.0.0.1:54388 - "POST /query/stream HTTP/1.1" 200
+2025-03-25 20:50:50,563 - lightrag - INFO - Inserting 1 records to llm_response_cache
+2025-03-25 20:50:50,564 - lightrag - INFO - Process 29756 buidling query context...
+2025-03-25 20:50:50,565 - lightrag - INFO - Query nodes: Passage ranking, Document similarity, Text search, top_k: 10, cosine: 0.2
+2025-03-25 20:50:52,636 - lightrag - INFO - Query edges: Dense passage retrieval, Information retrieval, Text analysis, top_k: 10, cosine: 0.2
+2025-03-25 20:50:54,733 - lightrag - INFO - Global query uses 14 entites, 10 relations, 2 chunks
+2025-03-25 20:50:54,740 - lightrag - INFO - Local query uses 10 entites, 8 relations, 3 chunks
+2025-03-25 20:50:54,763 - lightrag - INFO - Process 29756 KV writting 28 records to llm_response_cache
+2025-03-25 20:50:54,776 - uvicorn.access - INFO - 127.0.0.1:54432 - "POST /query/stream HTTP/1.1" 200
+2025-03-25 20:53:24,802 - uvicorn.error - INFO - Shutting down
+2025-03-25 20:53:24,911 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-03-25 20:53:24,912 - uvicorn.error - INFO - Application shutdown complete.
+2025-03-25 20:53:24,913 - uvicorn.error - INFO - Finished server process [29756]
+2025-04-19 19:57:55,843 - lightrag - INFO - Created new empty graph
+2025-04-19 19:57:56,090 - uvicorn.error - INFO - Started server process [35304]
+2025-04-19 19:57:56,090 - uvicorn.error - INFO - Waiting for application startup.
+2025-04-19 19:57:56,092 - lightrag - INFO - Process 35304 KV load full_docs with 0 records
+2025-04-19 19:57:56,092 - lightrag - INFO - Process 35304 KV load text_chunks with 0 records
+2025-04-19 19:57:56,093 - lightrag - INFO - Process 35304 KV load llm_response_cache with 0 records
+2025-04-19 19:57:56,093 - lightrag - INFO - Process 35304 doc status load doc_status with 0 records
+2025-04-19 19:57:56,094 - uvicorn.error - INFO - Application startup complete.
+2025-04-19 19:57:56,095 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-04-19 20:00:01,742 - uvicorn.error - INFO - Shutting down
+2025-04-19 20:00:01,850 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-04-19 20:00:01,851 - uvicorn.error - INFO - Application shutdown complete.
+2025-04-19 20:00:01,851 - uvicorn.error - INFO - Finished server process [35304]

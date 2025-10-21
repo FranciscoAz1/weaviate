@@ -1,0 +1,12 @@
+PYTHONPATH=['/home/francisco/anaconda3/envs/weaviate/lib/python3.12/site-packages']
+LLM_BINDING=ollama
+LLM_MODEL=llama3.2:latest
+LLM_BINDING_HOST=http://localhost:11434
+# LLM_BINDING_API_KEY=your_api_key
+MAX_TOKENS=8192
+
+EMBEDDING_BINDING=ollama
+EMBEDDING_BINDING_HOST=http://localhost:11434
+EMBEDDING_MODEL=mxbai-embed-large:latest
+EMBEDDING_DIM=1024
+# EMBEDDING_BINDING_API_KEY=your_api_key
