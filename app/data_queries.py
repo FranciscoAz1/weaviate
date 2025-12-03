@@ -1,5 +1,5 @@
 from weaviate.classes.query import QueryReference, MetadataQuery
-from weaviate_manager import WeaviateManager
+from weaviate_manager_fail import WeaviateManager
 
 class DataQueries(WeaviateManager):
     """Class for querying data from Weaviate collections."""

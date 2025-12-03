@@ -1,4 +1,4 @@
-from weaviate_manager import WeaviateManager
+from weaviate_manager_fail import WeaviateManager
 
 class DataInsertion(WeaviateManager):
     """Class for inserting data into Weaviate collections."""

@@ -1,5 +1,5 @@
 from weaviate.classes.config import Property, DataType, ReferenceProperty, Configure
-from weaviate_manager import WeaviateManager
+from weaviate_manager_fail import WeaviateManager
 
 class CollectionSetup(WeaviateManager):
     """Class for setting up Weaviate collections and references."""

@@ -378,19 +378,6 @@ class WeaviateDataManager:
         if metadados_obj:
             self.ficheiro.data.reference_add(ficheiro_obj, "belongsToMetadados", metadados_obj)
         return ficheiro_obj
-
-    def add_metadados(self, metadados_data, ficheiro_obj=None, etapa_obj=None, pasta_obj=None, entidade_obj=None):
-        """Creates Metadados and links it to Ficheiro, Etapa, Pasta and Entidade if provided."""
-        metadados_obj = self.metadados.data.insert({"name": metadados_data})
-        if ficheiro_obj:
-            self.metadados.data.reference_add(metadados_obj, "hasFicheiros", ficheiro_obj)
-        if etapa_obj:
-            self.metadados.data.reference_add(metadados_obj, "hasEtapas", etapa_obj)
-        if pasta_obj:
-            self.metadados.data.reference_add(metadados_obj, "hasPastas", pasta_obj)
-        if entidade_obj:
-            self.metadados.data.reference_add(metadados_obj, "hasEntidades", entidade_obj)
-        return metadados_obj
     
     def query_fluxo_etapas(self, limit=10):
         """Query Fluxos and their associated Etapas."""
@@ -489,12 +476,6 @@ class WeaviateDataManager:
             - hasFicheiros (Ficheiro)
               - hasEtapas (Etapa)
                 - belongsToFluxo (Fluxo)
-              - hasPastas (Pasta)
-              - hasEntidades (Entidade)
-            - hasFluxos (Fluxo)
-              - hasEtapas (Etapa)
-              - belongsToFicheiros (Ficheiro)
-              - belongsToPastas (Pasta)
         """
 
         # Attempt to leverage multiple nested references at various levels
@@ -518,35 +499,9 @@ class WeaviateDataManager:
                                         return_properties=["name"],
                                     ),
                                 ),
-                                QueryReference(
-                                    link_on="hasPastas",
-                                    return_properties=["name"],
-                                ),
-                                QueryReference(
-                                    link_on="hasEntidades",
-                                    return_properties=["name"],
-                                ),
                             ],
                         ),
-                        # Pasta -> Fluxos (with deep refs)
-                        QueryReference(
-                            link_on="hasFluxos",
-                            return_properties=["name"],
-                            return_references=[
-                                QueryReference(
-                                    link_on="hasEtapas",
-                                    return_properties=["name"],
-                                ),
-                                QueryReference(
-                                    link_on="belongsToFicheiros",
-                                    return_properties=["name"],
-                                ),
-                                QueryReference(
-                                    link_on="belongsToPastas",
-                                    return_properties=["name"],
-                                ),
-                            ],
-                        ),
+                        
                     ],
                 )
             ],
@@ -667,6 +622,189 @@ class WeaviateDataManager:
             
         return results
     
+    def get_class_references(self, class_name: str) -> List[Dict[str, str]]:
+        """Return the list of reference properties for a class from the schema.
+
+        Output format: [{"name": <ref_property_name>, "target_collection": <target_class>}, ...]
+
+        This inspects the collection config to extract references in a version-tolerant way
+        (works if config is a dict or an object with a .references list of dataclasses).
+        """
+        try:
+            coll = self.client.collections.get(class_name)
+        except Exception:
+            return []
+
+        try:
+            cfg = coll.config.get()  # v4 style returns config object/dict
+        except Exception:
+            # Some clients may not support .get(); try using the attribute directly
+            cfg = getattr(coll, "config", None)
+
+        refs: List[Dict[str, str]] = []
+        if cfg is None:
+            return refs
+
+        # Dataclass/object-style
+        obj_refs = getattr(cfg, "references", None)
+        if obj_refs is not None:
+            try:
+                for r in obj_refs:
+                    name = getattr(r, "name", None)
+                    tgt = getattr(r, "target_collection", None) or getattr(r, "targetCollection", None)
+                    if name and tgt:
+                        refs.append({"name": name, "target_collection": tgt})
+                return refs
+            except Exception:
+                pass
+
+        # Dict-style
+        try:
+            dict_refs = cfg.get("references", []) if isinstance(cfg, dict) else []
+            for r in dict_refs:
+                name = r.get("name")
+                tgt = r.get("target_collection") or r.get("targetCollection")
+                if name and tgt:
+                    refs.append({"name": name, "target_collection": tgt})
+        except Exception:
+            pass
+
+        return refs
+
+    def build_reference_plan(self, classes: List[str] | None = None, depth: int = 1) -> Dict[str, List[QueryReference]]:
+        """Dynamically build a nested QueryReference plan from the schema.
+
+        Parameters:
+        - classes: list of class names to include; defaults to the 5 main classes in this project
+        - depth: how deep to nest references (1 = only direct references; 2 = one hop nested, etc.)
+
+        Returns:
+        - Dict mapping class name -> List[QueryReference] suitable for return_references.
+        """
+        if classes is None:
+            classes = ["Pasta", "Fluxo", "Etapa", "Ficheiro", "Entidade"]
+
+        def build_for_class(cls: str, d: int) -> List[QueryReference]:
+            out: List[QueryReference] = []
+            for r in self.get_class_references(cls):
+                nested: List[QueryReference] = build_for_class(r["target_collection"], d - 1) if d > 1 else []
+                if nested:
+                    out.append(
+                        QueryReference(
+                            link_on=r["name"],
+                            return_properties=["name"],
+                            return_references=nested,
+                        )
+                    )
+                else:
+                    out.append(
+                        QueryReference(
+                            link_on=r["name"],
+                            return_properties=["name"],
+                        )
+                    )
+            return out
+
+        plan: Dict[str, List[QueryReference]] = {}
+        for cls in classes:
+            plan[cls] = build_for_class(cls, depth)
+        return plan
+
+    def _collect_fluxo_entidade_from_refs(self, obj, class_name: str, depth: int = 2):
+        """Traverse returned references (guided by schema) to collect Fluxo and Entidade names.
+
+        This uses the live schema to know, for each link_on on a class, what the target class is.
+        It only traverses what's present in obj.references (so it effectively respects the plan
+        used in the query), and stops at the specified depth.
+        """
+        collected_fluxos, collected_entidades = set(), set()
+
+        if depth <= 0 or not hasattr(obj, "references") or obj.references is None:
+            return collected_fluxos, collected_entidades
+
+        # Map link_on -> target class for this class
+        schema_refs = {r["name"]: r["target_collection"] for r in self.get_class_references(class_name)}
+
+        for link_on, ref_obj in (obj.references or {}).items():
+            target_class = schema_refs.get(link_on)
+            if not target_class or not hasattr(ref_obj, "objects") or not ref_obj.objects:
+                continue
+
+            for child in ref_obj.objects:
+                # Collect if child type is Fluxo or Entidade
+                if target_class == "Fluxo":
+                    nm = child.properties.get("name") if hasattr(child, "properties") else None
+                    if nm:
+                        collected_fluxos.add(nm)
+                elif target_class == "Entidade":
+                    nm = child.properties.get("name") if hasattr(child, "properties") else None
+                    if nm:
+                        collected_entidades.add(nm)
+
+                # Recurse into child to find deeper Fluxo/Entidade
+                f2, e2 = self._collect_fluxo_entidade_from_refs(child, target_class, depth - 1)
+                collected_fluxos.update(f2)
+                collected_entidades.update(e2)
+
+        return collected_fluxos, collected_entidades
+    
+    def entity_flux_semantic_search(self, entidade_name, fluxo_name, query_text, alpha=0.2, limit=5):
+        """Semantic search across collections and return Fluxo and Entidade references for explainability.
+
+        Notes:
+        - Uses correct link_on-based QueryReference definitions instead of class_name.
+        - Collects both Fluxo and Entidade names via direct and nested references.
+        - If entidade_name or fluxo_name are provided (non-empty), filters to results that include them.
+        """
+        aggregated = []
+        # ["Pasta", "Fluxo", "Etapa", "Ficheiro", "Entidade"]
+        for collection_name in ["Entidade"]:
+            collection = self.client.collections.get(collection_name)
+            plan = self.build_reference_plan(classes=[collection_name], depth=2)
+            search_results = collection.query.hybrid(
+                query=query_text,
+                alpha=alpha,
+                return_properties=["name"],
+                return_metadata=MetadataQuery(score=True),
+                return_references=plan.get(collection_name, []),
+                limit=limit,
+            )
+
+            # Collate explainability using schema-guided traversal (respects plan depth)
+            for obj in search_results.objects:
+                fluxos, entidades = self._collect_fluxo_entidade_from_refs(obj, collection_name, depth=2)
+
+                item = {
+                    "class": collection_name,
+                    "name": obj.properties.get("name"),
+                    "score": getattr(getattr(obj, "metadata", None), "score", None),
+                    "fluxos": sorted(fluxos),
+                    "entidades": sorted(entidades),
+                }
+
+                # Optional filtering by provided names
+                if entidade_name:
+                    if entidade_name not in item["entidades"] and item["class"] != "Entidade":
+                        continue
+                if fluxo_name:
+                    if fluxo_name not in item["fluxos"] and item["class"] != "Fluxo":
+                        continue
+
+                aggregated.append(item)
+
+        # Sort by score descending where available
+        aggregated.sort(key=lambda x: (x["score"] is not None, x["score"]), reverse=True)
+
+        # Print compact explainability output
+        for r in aggregated:
+            print(f"[{r['class']}] {r['name']} (score={r['score']})")
+            if r["fluxos"]:
+                print(f"  Fluxos: {', '.join(r['fluxos'])}")
+            if r["entidades"]:
+                print(f"  Entidades: {', '.join(r['entidades'])}")
+
+        return aggregated
+    
     def close(self):
         """Close the Weaviate client connection."""
         self.client.close()
@@ -733,7 +871,12 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    manager = WeaviateDataManager(connect_to_local=True)
+    try:
+        manager.entity_flux_semantic_search(None, None, "contract approval process", alpha=0.3, limit=5)
+    finally:
+        manager.close()
 
 def benchmark_sample_configs(
     configs: List[Dict[str, int]],
@@ -742,6 +885,7 @@ def benchmark_sample_configs(
     limit_entidade_hierarchy: int = 2,
     global_query: str = "Find documents about contract approvals",
     limit_per_collection: int = 3,
+    alpha: float = 0.2,
     clean_start_each: bool = True,
     connect_to_local: bool = True,
 ) -> List[Dict[str, Any]]:
@@ -815,9 +959,9 @@ def benchmark_sample_configs(
             timings["query_entidade_deep_hierarchy"] = time.perf_counter() - _t0
             print(f"Query 'entidade_hierarchy' completed in {timings['query_entidade_deep_hierarchy']:.3f}s")
 
-            print("\n3. Running global semantic search:")
+            print("\n3. Running global semantic (hybrid) search:")
             _t0 = time.perf_counter()
-            manager.global_semantic_search(global_query, limit_per_collection=limit_per_collection)
+            manager.global_semantic_search(global_query, alpha=alpha, limit_per_collection=limit_per_collection)
             timings["global_semantic_search"] = time.perf_counter() - _t0
             print(f"Query 'global_semantic_search' completed in {timings['global_semantic_search']:.3f}s")
 
